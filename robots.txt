@@ -1,0 +1,18 @@
+# robots.txt — Producción
+
+# Permitir que todos los bots rastreen el sitio
+User-agent: *
+Allow: /
+
+# (Opcional) Evitar indexar URLs con parámetros de tracking o búsquedas internas
+# Borralas si no usás estas rutas/parámetros
+Disallow: /search
+Disallow: /*?*utm_*
+Disallow: /*?*gclid=*
+Disallow: /*?*fbclid=*
+Disallow: /*?*msclkid=*
+
+# Sitemaps
+Sitemap: https://tudominio.com/sitemap.xml
+# Si generás un sitemap específico de imágenes, añadilo también:
+# Sitemap: https://tudominio.com/sitemap-images.xml

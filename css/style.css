@@ -1,0 +1,2123 @@
+/* FONTS */
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../assets/fonts/Outfit-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Outfit-Regular.woff') format('woff'),
+        url('../assets/fonts/Outfit-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('../assets/fonts/Outfit-SemiBold.woff2') format('woff2'),
+        url('../assets/fonts/Outfit-SemiBold.woff') format('woff'),
+        url('../assets/fonts/Outfit-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Humane';
+    src: url('../assets/fonts/Humane-Medium.woff2') format('woff2'),
+        url('../assets/fonts/Humane-Medium.woff') format('woff'),
+        url('../assets/fonts/Humane-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Humane';
+    src: url('../assets/fonts/Humane-SemiBold.woff2') format('woff2'),
+        url('../assets/fonts/Humane-SemiBold.woff') format('woff'),
+        url('../assets/fonts/Humane-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Humane';
+    src: url('../assets/fonts/Humane-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Humane-Bold.woff') format('woff'),
+        url('../assets/fonts/Humane-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* VARIABLES */
+
+:root {
+
+    /* COLORS */
+    --yellow-color: #FFCD01;
+    --dark-color: #010101;
+    --white-color: #F2F2F2;
+    --dark-soft-color: #141414;
+    --light-color: #F8F4EA;
+}
+
+/* RESETS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding);
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img,
+picture {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Focus visible accesible */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--yellow-color);
+    outline-offset: 2px;
+}
+
+/* UTILS */
+
+body.no-scroll {
+    overflow: hidden;
+    /* bloquea scroll vertical y horizontal */
+}
+
+.container {
+
+    padding-inline: 0.75rem;
+    margin-inline: auto;
+
+    @media (min-width: 768px) {
+        padding-inline: 2rem;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1200px;
+        padding-inline: 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--yellow-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+
+    transition: transform .2s ease, box-shadow .2s ease;
+
+    & img {
+        width: 2rem;
+        height: 2rem;
+        display: block;
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, .3);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    }
+
+}
+
+/* end of WHATSAPP BUTTON */
+
+/* NAV */
+.nav {
+    background-color: var(--dark-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    & .nav__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 1rem;
+
+        & .nav__logo .nav__logo-link img {
+            display: block;
+            height: auto;
+            /* respeta width/height del HTML para cero CLS */
+        }
+
+        /* Botón hamburguesa */
+        & .nav__toggle {
+            background: none;
+            border: 0;
+            padding: .25rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            & img {
+                width: 32px;
+                height: 32px;
+                display: block;
+            }
+        }
+
+        & .nav__menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: auto;
+            width: min(84vw, 320px);
+            background-color: var(--dark-color);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            &.is-active {
+                transform: translateX(0);
+            }
+
+            /* Botón de cierre (dentro del contenedor, fuera del <ul>) */
+            & .nav__close {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: none;
+                border: 0;
+                padding: .25rem;
+                cursor: pointer;
+
+                & img {
+                    width: 32px;
+                    height: 32px;
+                    display: block;
+                }
+            }
+
+            & .hidden {
+                display: none;
+            }
+
+            /* Lista del menú */
+            & .nav__list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1.25rem;
+                flex: 1;
+            }
+
+            & .nav__menu-link {
+                font-family: 'Outfit';
+                font-weight: 400;
+                color: var(--light-color);
+                font-size: 1.5rem;
+                text-decoration: none;
+                transition: color 320ms cubic-bezier(.22, 1, .36, 1);
+            }
+
+            & .nav__menu-link:hover,
+            & .nav__menu-link:focus-visible {
+                color: var(--link-hover, #FFCD01);
+                transition-duration: 140ms;
+                outline: none;
+            }
+
+            /* Backdrop detrás del menú */
+            & .nav__backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, .5);
+                display: none;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity .25s ease;
+                z-index: 1001;
+                /* debajo del menú, arriba del contenido */
+
+                &.active {
+                    display: block;
+                }
+
+            }
+
+            /* Cuando el menú está activo, mostramos el backdrop */
+            & .nav__menu.is-active~.nav__backdrop {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            /* Aseguramos menú por encima del backdrop */
+            & .nav__menu {
+                z-index: 1002;
+            }
+        }
+
+        /* Backdrop detrás del menú */
+        & .nav__backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgb(0 0 0 / .45);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .25s ease;
+            z-index: 1001;
+            /* debajo del menú, arriba del contenido */
+        }
+
+        /* Cuando el menú está activo, mostramos el backdrop */
+        & .nav__menu.is-active~.nav__backdrop {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Aseguramos menú por encima del backdrop */
+        & .nav__menu {
+            z-index: 1002;
+        }
+
+    }
+
+    /* Desktop */
+    @media (min-width: 1200px) {
+        & .nav__container {
+            padding-block: 1.5rem;
+
+
+            .nav__toggle,
+            .nav__close,
+            .nav__backdrop {
+                display: none !important;
+            }
+
+            & .nav__menu {
+                position: static;
+                transform: none;
+                transition: none;
+                width: auto;
+                background: transparent;
+                padding: 0;
+                display: block;
+
+
+                & .nav__list {
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1.5rem;
+                }
+
+                & .nav__menu-link {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: var(--white-color);
+                }
+            }
+        }
+    }
+}
+
+/* end of NAV */
+
+/* HEADER */
+
+.header {
+    /* ✅ añadido: color de fondo por si la imagen tarda (mejor FCP) */
+    background-color: var(--dark-color);
+
+    height: calc(100svh - var(--scroll-padding));
+
+    background:
+        linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0.5)),
+        image-set(url('../assets/images/marton-hero-mobile.webp') type('image/webp'),
+            url('../assets/images/marton-hero-mobile.png') type('image/png'));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+
+    & .header__hero {
+        & .header__container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+
+            & .header__title {
+                font-family: 'Humane';
+                font-size: 6rem;
+                font-weight: 700;
+                color: var(--yellow-color);
+                text-transform: uppercase;
+                /* ✅ opcional: mejor corte de líneas en títulos largos */
+                text-wrap: balance;
+            }
+
+            & .header__subtitle {
+                font-family: 'Humane';
+                font-size: 4rem;
+                font-weight: 500;
+                color: var(--white-color);
+                text-transform: uppercase;
+                text-wrap: balance;
+                /* opcional */
+            }
+
+            & .header__cta {
+                font-family: 'Humane';
+                font-size: 3rem;
+                font-weight: 500;
+                color: var(--dark-color);
+                text-transform: uppercase;
+
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: .5rem 1rem;
+                background-color: var(--yellow-color);
+                cursor: pointer;
+                /* ✅ micro interacción accesible */
+                transition: transform .18s ease, filter .18s ease;
+            }
+
+            & .header__cta:hover {
+                transform: translateY(-1px);
+                filter: brightness(1.05);
+            }
+
+            & .header__cta:focus-visible {
+                outline: 2px solid currentColor;
+                outline-offset: 3px;
+            }
+        }
+    }
+
+    & .header__arrow {
+        & .header__container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-block: 2rem;
+
+            /* ✅ base estable para el icono (evita CLS antes del media) */
+            & .header__arrow-icon {
+                width: 32px;
+                height: 32px;
+                display: inline-block;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+
+        background:
+            linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0.5)),
+            image-set(url('../assets/images/marton-hero-md.webp') type('image/webp'),
+                url('../assets/images/marton-hero-md.png') type('image/png'));
+
+        & .header__hero .header__container {
+            & .header__title {
+                font-size: 10rem;
+            }
+
+            & .header__subtitle {
+                font-size: 6rem;
+            }
+
+            & .header__cta {
+                font-size: 4rem;
+            }
+        }
+
+        & .header__arrow .header__container {
+            & .header__arrow-icon {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            /* mantiene proporción */
+        }
+    }
+
+    @media (min-width: 1200px) {
+        background:
+            linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0.5)),
+            image-set(url('../assets/images/marton-hero-lg.webp') type('image/webp'),
+                url('../assets/images/marton-hero-lg.png') type('image/png'));
+    }
+}
+
+/* end of HEADER */
+
+
+/* ABOUT */
+.about {
+    padding-block: var(--scroll-padding);
+    background-color: var(--light-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23010101' fill-opacity='0.04' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 0.5rem 0.5rem;
+    background-blend-mode: multiply;
+
+    /* perf: difiere el render fuera de pantalla */
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+
+    & .about__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        & .about__content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem;
+
+            & .about__title {
+                font-family: 'Humane';
+                font-size: 4rem;
+                font-weight: 700;
+                color: var(--dark-color);
+                text-transform: uppercase;
+                border-bottom: 5px solid var(--yellow-color);
+                /* cortes de línea más lindos */
+                text-wrap: balance;
+            }
+
+            & .about__text {
+                font-family: 'Outfit';
+                font-size: 1.125rem;
+                color: var(--dark-color);
+            }
+        }
+
+        & .about__image-wrapper {
+            display: none;
+        }
+    }
+
+    /* foco visible si hay enlaces en la sección */
+    & a:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 3px;
+    }
+
+    @media (min-width: 768px) {
+        & .about__container {
+            flex-direction: row;
+            align-items: center;
+            gap: 1.25rem;
+
+            & .about__content {
+                flex: 1;
+
+                & .about__title {
+                    font-size: 6rem;
+                }
+            }
+
+            & .about__image-wrapper {
+                flex: 1;
+                display: inline-flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                /* evita deformaciones; no fuerza ancho */
+                & .about__image {
+                    max-height: 700px;
+                    height: auto;
+                    max-width: 100%;
+                    width: auto;
+                    display: block;
+                    transform: rotate(1deg);
+                    transition: transform .28s ease;
+
+                    &:hover {
+                        transform: scale(1.02);
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    & .about__container {
+        & .about__image-wrapper {
+            align-items: center;
+            justify-content: flex-end;
+
+            & img {
+                max-height: 700px;
+            }
+        }
+    }
+}
+
+/* end of ABOUT */
+
+/* RUTINAS */
+.rutinas {
+    padding-block: var(--scroll-padding);
+    background-color: var(--dark-soft-color);
+
+    /* perf: render diferido si no está a la vista */
+    content-visibility: auto;
+    contain-intrinsic-size: 1200px;
+
+    & .rutinas__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        & .rutinas__header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+
+            & .rutinas__title {
+                font-family: 'Humane';
+                font-size: 4rem;
+                font-weight: 600;
+                color: var(--white-color);
+                text-transform: uppercase;
+                border-bottom: 5px solid var(--yellow-color);
+                text-wrap: balance;
+            }
+
+            & .rutinas__description {
+                font-family: 'Outfit';
+                font-size: 1.25rem;
+                color: var(--white-color);
+                text-wrap: pretty;
+            }
+
+            & .rutinas__selector {
+                display: flex;
+                padding: .5rem;
+                align-items: center;
+                justify-content: center;
+                border-radius: 999px;
+                border: 2px solid var(--yellow-color);
+                background-color: var(--dark-soft-color);
+                max-width: 320px;
+                gap: .25rem;
+
+                & .rutinas__selector-btn {
+                    font-family: 'Outfit';
+                    font-size: 1.125rem;
+                    font-weight: 500;
+                    width: 160px;
+                    gap: .5rem;
+                    border-radius: 999px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: .5rem 1.5rem;
+                    border: none;
+                    background-color: transparent;
+                    color: var(--yellow-color);
+                    cursor: pointer;
+                    transition: background-color .25s ease, color .25s ease, transform .12s ease;
+                }
+
+                /* mantiene tu clase activa y suma estado accesible */
+                & .rutinas__selector-btn--active,
+                & .rutinas__selector-btn[aria-selected="true"] {
+                    background-color: var(--yellow-color);
+                    color: var(--dark-color);
+                }
+
+                & .rutinas__selector-btn:focus-visible {
+                    outline: 2px solid var(--yellow-color);
+                    outline-offset: 3px;
+                }
+
+                & img {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+        & .rutinas__cards {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 1.25rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-inline: contain;
+            padding-inline: .25rem;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* oculta el panel inactivo si manejás aria-hidden en JS */
+            &[aria-hidden="true"] {
+                display: none;
+            }
+
+            & .rutinas__card {
+                flex: 0 0 100%;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                text-align: center;
+                gap: 1.5rem;
+                border: 2px solid var(--yellow-color);
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+                background: transparent;
+                transition: transform .16s ease, box-shadow .16s ease;
+
+                &:focus-within {
+                    box-shadow: 0 0 0 2px var(--yellow-color);
+                }
+
+                & .rutinas__card-header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+
+                    & .rutinas__card-icon {
+                        width: 3rem;
+                        height: 3rem;
+                        display: block;
+                    }
+
+                    & .rutinas__card-title {
+                        color: var(--yellow-color);
+                        font-family: 'Humane';
+                        font-size: 4rem;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        text-wrap: balance;
+                    }
+                }
+
+                & .rutinas__card-tags {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+                    justify-content: space-between;
+                    color: var(--white-color);
+                    font-size: .9rem;
+                    font-weight: 600;
+                    font-family: 'Outfit';
+
+                    & .rutinas__card-tag {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: .5rem;
+
+                        & img {
+                            width: 16px;
+                            height: 16px;
+                            display: block;
+                        }
+                    }
+                }
+
+                & .rutinas__card-list {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    gap: 1rem;
+
+                    & .rutinas__card-item {
+                        font-family: 'Outfit';
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: .5rem;
+                        color: var(--white-color);
+                        font-size: 1rem;
+                        font-weight: 500;
+                        text-align: left;
+
+                        & img {
+                            width: 16px;
+                            height: 16px;
+                            display: block;
+                        }
+                    }
+                }
+
+                & .rutinas__card-price {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    gap: .5rem;
+
+                    & .rutinas__card-price--before {
+                        font-family: 'Outfit';
+                        color: var(--white-color);
+                        font-size: 1rem;
+                        text-decoration: line-through;
+                    }
+
+                    & .rutinas__card-price--now {
+                        font-family: 'Outfit';
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: .5rem;
+                        color: var(--yellow-color);
+                        font-size: 1.5rem;
+                        font-weight: 600;
+
+                        & .rutinas__card-icon {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            display: block;
+                        }
+                    }
+                }
+
+                & .rutinas__card-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    align-self: stretch;
+                    padding: .75rem 1rem;
+                    background-color: var(--yellow-color);
+                    border: none;
+                    color: var(--dark-color);
+                    font-family: 'Humane';
+                    font-size: 3rem;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    text-decoration: none;
+                    transition: filter .18s ease, transform .12s ease;
+                }
+
+                & .rutinas__card-btn:hover {
+                    filter: brightness(1.05);
+                    transform: translateY(-1px);
+                }
+
+                & .rutinas__card-btn:focus-visible {
+                    outline: 2px solid currentColor;
+                    outline-offset: 3px;
+                }
+            }
+        }
+
+        & .rutinas__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            & .rutinas__info-text {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+                font-family: 'Outfit';
+                font-size: .875rem;
+                color: var(--white-color);
+
+                & img {
+                    width: 16px;
+                    height: 16px;
+                    display: block;
+                }
+
+                & a {
+                    color: var(--yellow-color);
+                }
+
+                & a:focus-visible {
+                    outline: 2px solid currentColor;
+                    outline-offset: 3px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        & .rutinas__container {
+            & .rutinas__header .rutinas__title {
+                font-size: 5rem;
+            }
+
+            & .rutinas__cards .rutinas__card {
+                flex: 0 0 calc((100% - 1.25rem) / 2);
+            }
+
+            & .rutinas__info .rutinas__info-text {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        & .rutinas__container {
+            gap: 2rem;
+            max-width: 1440px;
+
+            & .rutinas__cards .rutinas__card {
+                flex: 0 0 calc((100% - 3 * 1.25rem) / 4);
+            }
+        }
+    }
+}
+
+/* end of RUTINAS */
+
+
+/* ASESORIAS */
+.asesorias {
+    padding-block: var(--scroll-padding);
+    background-color: var(--light-color);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23010101' fill-opacity='0.04' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 0.5rem 0.5rem;
+    background-blend-mode: multiply;
+
+    /* perf: no pinta hasta que entra al viewport */
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
+
+    & .asesorias__container {
+
+        & .asesorias__content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem;
+
+            & .asesorias__header {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+
+                & .asesorias__title {
+                    font-family: 'Humane';
+                    font-size: 4rem;
+                    font-weight: 700;
+                    color: var(--dark-color);
+                    text-transform: uppercase;
+                    border-bottom: 5px solid var(--yellow-color);
+                    /* cortes de línea más prolijos */
+                    text-wrap: balance;
+                }
+
+                & .asesorias__subtitle {
+                    font-family: 'Outfit';
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    /* tipografía más linda en varias líneas */
+                    text-wrap: pretty;
+                }
+            }
+
+            & .asesorias__description {
+                font-family: 'Outfit';
+                font-size: 1rem;
+                font-weight: 400;
+                color: var(--dark-color);
+                text-wrap: pretty;
+            }
+
+            & .asesorias__list {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 1rem;
+
+                & .asesorias__item {
+                    font-family: 'Outfit';
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: .5rem;
+                    color: var(--dark-color);
+                    font-weight: 600;
+                    font-size: 1rem;
+
+                    /* icono estable (0 CLS) */
+                    & img {
+                        width: 20px;
+                        height: 20px;
+                        display: block;
+                    }
+                }
+            }
+
+            & .asesorias__note {
+                font-family: 'Outfit';
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+                color: var(--dark-color);
+                font-weight: 600;
+                font-size: 1rem;
+                text-decoration: none;
+                transition: color .18s ease;
+
+                &:hover {
+                    color: color-mix(in srgb, var(--dark-color) 80%, black);
+                }
+
+                &:focus-visible {
+                    outline: 2px solid currentColor;
+                    outline-offset: 3px;
+                }
+
+                & .asesorias__note-icon {
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+                }
+            }
+
+            & .asesorias__footer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                & .asesorias__cta {
+                    font-family: 'Humane';
+                    font-size: 3rem;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: .5rem 1rem;
+                    color: var(--dark-color);
+                    background-color: var(--yellow-color);
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    text-decoration: none;
+                    transition: transform .16s ease, filter .16s ease;
+                }
+
+                & .asesorias__cta:hover {
+                    transform: translateY(-1px);
+                    filter: brightness(1.05);
+                }
+
+                & .asesorias__cta:focus-visible {
+                    outline: 2px solid currentColor;
+                    outline-offset: 3px;
+                }
+
+                & .asesorias__price {
+                    font-family: 'Humane';
+                    font-size: 3rem;
+                    padding: .5rem 1rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        & .asesorias__image-wrapper {
+            display: none;
+        }
+    }
+
+    @media (min-width: 768px) {
+        & .asesorias__container {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+
+            & .asesorias__content {
+                flex: 1;
+
+                & .asesorias__header .asesorias__title {
+                    font-size: 5rem;
+                }
+
+                & .asesorias__footer {
+                    align-items: flex-start;
+
+                    & .asesorias__cta {
+                        font-size: 4rem;
+                    }
+
+                    & .asesorias__price {
+                        font-size: 4rem;
+                    }
+                }
+            }
+
+            & .asesorias__image-wrapper {
+                flex: 1;
+                display: inline-flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                & .asesorias__image {
+                    max-block-size: 700px;
+                    inline-size: auto;
+                    block-size: auto;
+                    display: block;
+                    max-inline-size: 100%;
+                    transform: rotate(1deg);
+                    transition: transform .28s ease;
+
+                    &:hover {
+                        transform: scale(1.02);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        & .asesorias__container {
+            & .asesorias__content {
+                & .asesorias__header .asesorias__title {
+                    font-size: 6rem;
+                }
+
+                & .asesorias__footer {
+                    align-items: center;
+                    flex-direction: row-reverse;
+                    gap: 1rem;
+                }
+            }
+
+            & .asesorias__image-wrapper {
+                align-items: center;
+                justify-content: flex-end;
+
+                & img {
+                    max-height: 700px;
+                }
+            }
+        }
+    }
+
+    /* respeta usuarios con motion reducido */
+    @media (prefers-reduced-motion: reduce) {
+        & .asesorias__cta {
+            transition: none !important;
+        }
+
+        & .asesorias__note {
+            transition: none !important;
+        }
+    }
+}
+
+/* end of ASESORIAS */
+
+/* DIETAS */
+.dietas {
+    padding-block: var(--scroll-padding);
+    background-color: var(--dark-soft-color);
+
+    /* perf: evita pintar fuera de viewport */
+    content-visibility: auto;
+    contain-intrinsic-size: 1200px;
+
+    & .dietas__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        & .dietas__header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+
+            & .dietas__title {
+                font-family: 'Humane';
+                font-size: 4rem;
+                font-weight: 600;
+                color: var(--white-color);
+                text-transform: uppercase;
+                border-bottom: 5px solid var(--yellow-color);
+                text-wrap: balance;
+                /* cortes de título prolijos */
+            }
+
+            & .dietas__description {
+                font-family: 'Outfit';
+                font-size: 1.25rem;
+                color: var(--white-color);
+                text-wrap: pretty;
+            }
+
+            & .dietas__selector {
+                display: flex;
+                padding: .5rem;
+                align-items: center;
+                justify-content: center;
+                border-radius: 999px;
+                border: 2px solid var(--yellow-color);
+                background-color: var(--dark-soft-color);
+                max-width: 320px;
+
+                & .dietas__selector-btn {
+                    font-family: 'Outfit';
+                    font-size: 1.125rem;
+                    font-weight: 500;
+                    width: 160px;
+                    gap: .5rem;
+                    border-radius: 999px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: .5rem 1.5rem;
+                    border: none;
+                    background-color: transparent;
+                    color: var(--yellow-color);
+                    cursor: pointer;
+                    transition: background-color .25s ease, color .25s ease, transform .12s ease;
+
+                    & img {
+                        width: 20px;
+                        height: 20px;
+                        display: block;
+                    }
+                }
+
+                & .dietas__selector-btn--active {
+                    background-color: var(--yellow-color);
+                    color: var(--dark-color);
+                }
+
+                & .dietas__selector-btn:focus-visible {
+                    outline: 2px solid var(--yellow-color);
+                    outline-offset: 3px;
+                }
+            }
+        }
+
+        & .dietas__cards {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 1.25rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-inline: contain;
+
+            padding-inline: .25rem;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            & .dietas__card {
+                flex: 0 0 100%;
+                scroll-snap-align: start;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                text-align: center;
+                gap: 1.5rem;
+                border: 2px solid var(--yellow-color);
+                background: transparent;
+                transition: transform .16s ease, box-shadow .16s ease;
+
+                &:focus-within {
+                    box-shadow: 0 0 0 2px var(--yellow-color);
+                }
+
+                & .dietas__card-header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+
+                    & .dietas__card-icon {
+                        width: 3rem;
+                        height: 3rem;
+                        display: block;
+                    }
+
+                    & .dietas__card-title {
+                        color: var(--yellow-color);
+                        font-family: 'Humane';
+                        font-size: 4rem;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        text-wrap: balance;
+                    }
+                }
+
+                & .dietas__card-tags {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+                    justify-content: space-between;
+                    color: var(--white-color);
+                    font-size: .9rem;
+                    font-weight: 600;
+                    font-family: 'Outfit';
+
+                    & .dietas__card-tag {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: .5rem;
+
+                        & .dietas__card-tag-icon {
+                            width: 16px;
+                            height: 16px;
+                            display: block;
+                        }
+                    }
+                }
+
+                & .dietas__card-list {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    gap: 1rem;
+
+                    & .dietas__card-item {
+                        font-family: 'Outfit';
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: .5rem;
+                        color: var(--white-color);
+                        font-size: 1rem;
+                        font-weight: 500;
+                        text-align: left;
+
+                        & img {
+                            width: 16px;
+                            height: 16px;
+                            display: block;
+                        }
+                    }
+                }
+
+                & .dietas__card-price {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    gap: .5rem;
+
+                    & .dietas__card-price--before {
+                        font-family: 'Outfit';
+                        color: var(--white-color);
+                        font-size: 1rem;
+                        text-decoration: line-through;
+                    }
+
+                    & .dietas__card-price--now {
+                        font-family: 'Outfit';
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: .5rem;
+                        color: var(--yellow-color);
+                        font-size: 1.5rem;
+                        font-weight: 600;
+
+                        & .dietas__card-icon {
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            display: block;
+                        }
+                    }
+                }
+
+                & .dietas__card-btn {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    align-self: stretch;
+                    padding: .75rem 1rem;
+                    background-color: var(--yellow-color);
+                    border: none;
+
+                    color: var(--dark-color);
+                    font-family: 'Humane';
+                    font-size: 3rem;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    text-decoration: none;
+                    transition: filter .18s ease, transform .12s ease;
+                }
+
+                & .dietas__card-btn:hover {
+                    filter: brightness(1.05);
+                    transform: translateY(-1px);
+                }
+
+                & .dietas__card-btn:focus-visible {
+                    outline: 2px solid currentColor;
+                    outline-offset: 3px;
+                }
+            }
+        }
+
+        & .dietas__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            & .dietas__info-text {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+
+                font-family: 'Outfit';
+                font-size: .875rem;
+                color: var(--white-color);
+
+                & img {
+                    width: 16px;
+                    height: 16px;
+                    display: block;
+                }
+
+                & a {
+                    color: var(--yellow-color);
+                }
+
+                & a:focus-visible {
+                    outline: 2px solid currentColor;
+                    outline-offset: 3px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        & .dietas__container {
+            & .dietas__header .dietas__title {
+                font-size: 5rem;
+            }
+
+            & .dietas__cards .dietas__card {
+                flex: 0 0 calc((100% - 1.25rem) / 2);
+            }
+
+            & .dietas__info .dietas__info-text {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    @media (min-width:1200px) {
+        & .dietas__container {
+            gap: 2rem;
+            max-width: 1440px;
+
+            & .dietas__cards .dietas__card {
+                flex: 0 0 calc((100% - 3 * 1.25rem) / 4);
+            }
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        & .dietas__card,
+        & .dietas__card-btn {
+            transition: none !important;
+        }
+    }
+}
+
+/* end of DIETAS */
+
+
+/* TESTIMONIOS */
+.testimonios {
+    padding-block-start: var(--scroll-padding);
+    background-color: var(--dark-soft-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 4rem;
+
+    /* perf: no renderiza hasta que entra al viewport */
+    content-visibility: auto;
+    contain-intrinsic-size: 1200px;
+
+    & .testimonios__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
+        justify-content: center;
+        gap: 2rem;
+
+        & .testimonios__title {
+            font-family: 'Humane';
+            font-size: 4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--white-color);
+            border-bottom: 5px solid var(--yellow-color);
+            align-self: center;
+            text-wrap: balance;
+        }
+
+        & .testimonios__cards {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 1.25rem;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-inline: contain;
+            padding-inline: .25rem;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            & .testimonios__card {
+                flex: 0 0 100%;
+                background-color: #1A1A1A;
+                display: flex;
+                padding: 1rem;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 1.5rem;
+                border-radius: .5rem;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+                transition: transform .16s ease, box-shadow .16s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+
+                &:focus-within {
+                    box-shadow: 0 0 0 2px var(--yellow-color);
+                }
+
+                & img[aria-hidden="true"] {
+                    width: 24px;
+                    height: 24px;
+                    display: block;
+                }
+
+                & .testimonios__quote {
+                    font-family: 'Outfit';
+                    font-size: 1rem;
+                    color: var(--white-color);
+                    text-wrap: pretty;
+                }
+
+                & .testimonios__user {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    text-align: left;
+
+                    & .testimonios__avatar {
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 999px;
+                        display: block;
+                        /* evita “gap” de línea */
+                        object-fit: cover;
+                    }
+
+                    & .testimonios__name {
+                        font-family: 'Outfit';
+                        color: var(--white-color);
+                        font-weight: 500;
+                    }
+
+                    & .testimonios__info {
+                        font-family: 'Outfit';
+                        color: var(--white-color);
+                        font-size: 1rem;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+
+    & .testimonios__reel {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        max-height: 480px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-inline: contain;
+        gap: .25rem;
+        /* guarda un pequeño gutter */
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        & .testimonios__reel-img {
+            flex: 0 0 100%;
+            object-fit: cover;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            display: block;
+            height: auto;
+            width: 100%;
+            /* mantiene proporción aproximada para evitar CLS si tarda la imagen */
+            aspect-ratio: 4 / 5;
+            background: #111;
+            /* color de fondo mientras carga */
+        }
+    }
+
+    @media (min-width: 768px) {
+        & .testimonios__container {
+            & .testimonios__title {
+                font-size: 5rem;
+            }
+
+            & .testimonios__cards .testimonios__card {
+                flex: 0 0 calc((100% - 1.25rem) / 2);
+            }
+        }
+
+        & .testimonios__reel .testimonios__reel-img {
+            flex: 0 0 50%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        & .testimonios__container .testimonios__cards .testimonios__card {
+            flex: 0 0 calc((100% - 2 * 1.25rem) / 3);
+        }
+
+        & .testimonios__reel .testimonios__reel-img {
+            flex: 0 0 33.333%;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        & .testimonios__cards .testimonios__card {
+            transition: none !important;
+        }
+    }
+}
+
+/* end of TESTIMONIOS */
+
+/* Utilidad accesible (screen readers) */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* BANNER ENTRENO */
+.entreno-banner {
+    padding-block: 2rem;
+
+    /* Sombra y fondo con fallback + perf */
+    background:
+        linear-gradient(rgba(1, 1, 1, .5), rgba(1, 1, 1, .5)),
+        image-set(url('../assets/images/banner-entreno-bg.webp') type('image/webp'),
+            url('../assets/images/banner-entreno-bg.jpg') type('image/jpeg'));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    /* Evita trabajo de pintura fuera de viewport */
+    content-visibility: auto;
+    contain-intrinsic-size: 420px;
+
+    & .entreno-banner__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+
+        & .entreno-banner__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            & .entreno-banner__logo {
+                height: 2rem;
+                /* respeta ratio por width/height del HTML */
+                display: block;
+                /* evita interline */
+            }
+
+            & .entreno-banner__text {
+                font-family: 'Outfit';
+                color: var(--white-color);
+                text-transform: uppercase;
+                font-size: 1.25rem;
+                text-wrap: balance;
+            }
+        }
+
+        & .entreno-banner__action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            & .entreno-banner__codigo {
+                font-family: 'Outfit';
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--white-color);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: .5rem 1rem;
+                border-radius: .5rem;
+                border: 1px dashed var(--white-color);
+                background-color: rgba(1, 1, 1, 0.4);
+                letter-spacing: .04em;
+                /* más “código” */
+            }
+
+            & .entreno-banner__btn {
+                font-family: 'Humane';
+                font-size: 3rem;
+                font-weight: 500;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--dark-color);
+                background-color: var(--yellow-color);
+                padding: .5rem 1rem;
+                text-transform: uppercase;
+                cursor: pointer;
+                text-decoration: none;
+
+                /* micro-interacciones accesibles */
+                transition: transform .14s ease, filter .14s ease;
+            }
+
+            & .entreno-banner__btn:hover {
+                transform: translateY(-1px);
+                filter: brightness(1.05);
+            }
+
+            & .entreno-banner__btn:active {
+                transform: translateY(0);
+                filter: brightness(1);
+            }
+
+            & .entreno-banner__btn:focus-visible {
+                outline: 2px solid currentColor;
+                outline-offset: 3px;
+            }
+        }
+    }
+
+    @media (min-width:768px) {
+        & .entreno-banner__container {
+            flex-direction: row;
+            align-items: flex-end;
+
+            & .entreno-banner__info {
+                align-items: flex-start;
+            }
+
+            & .entreno-banner__action {
+                align-items: flex-end;
+                gap: 1.25rem;
+
+                & .entreno-banner__codigo {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        padding-block: 3rem;
+
+        & .entreno-banner__container {
+            align-items: center;
+
+            & .entreno-banner__info {
+                flex-direction: row;
+                align-items: center;
+                gap: 2rem;
+
+                & .entreno-banner__logo {
+                    height: 3rem;
+                    width: auto;
+                }
+
+                & .entreno-banner__text {
+                    font-size: 2rem;
+                }
+            }
+
+            & .entreno-banner__action {
+                gap: 2rem;
+            }
+        }
+    }
+
+    /* Respeta usuarios con menos movimiento */
+    @media (prefers-reduced-motion: reduce) {
+        & .entreno-banner__btn {
+            transition: none !important;
+        }
+    }
+}
+
+/* end of BANNER ENTRENO */
+
+
+/* FAQ */
+.faq {
+    padding-block: var(--scroll-padding);
+    background-color: var(--dark-soft-color);
+
+    /* perf: evita trabajo hasta entrar al viewport */
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
+
+    & .faq__container {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        & .faq__title {
+            align-self: center;
+            color: var(--white-color);
+            font-family: 'Humane';
+            font-size: 4rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-bottom: 5px solid var(--yellow-color);
+            text-wrap: balance;
+        }
+
+        & .faq__questions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            & .faq__item {
+                width: 100%;
+                padding: 1rem;
+                background-color: #F8F4EA;
+                border-radius: .5rem;
+                text-align: left;
+                border: 1px solid rgba(0, 0, 0, .06);
+                transition: box-shadow .18s ease;
+
+                &[open] {
+                    gap: 1rem;
+                    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+                }
+
+                /* resetea el marcador nativo y agrega caret +/− accesible */
+                & .faq__question {
+                    color: var(--dark-soft-color);
+                    font-family: 'Outfit';
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    cursor: pointer;
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+                    outline: none;
+                }
+
+                & .faq__question::-webkit-details-marker {
+                    display: none;
+                }
+
+                /* Safari/Chrome */
+                & .faq__question::before {
+                    content: "+";
+                    font-weight: 700;
+                    inline-size: 1.25rem;
+                    text-align: center;
+                    color: var(--dark-soft-color);
+                    transform: translateY(-1px);
+                }
+
+                &[open] .faq__question::before {
+                    content: "−";
+                }
+
+                & .faq__question:focus-visible {
+                    outline: 2px solid var(--yellow-color);
+                    outline-offset: 3px;
+                    border-radius: .25rem;
+                }
+
+                & .faq__answer {
+                    font-family: 'Outfit';
+                    color: #606267;
+                    font-weight: 400;
+                    line-height: 1.6;
+                    text-wrap: pretty;
+                }
+            }
+        }
+    }
+
+    @media (min-width:768px) {
+        & .faq__container {
+            & .faq__title {
+                font-size: 5rem;
+            }
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        & .faq__item {
+            transition: none !important;
+        }
+    }
+}
+
+/* end of FAQ */
+
+/* CTA FINAL */
+.cta-final {
+    padding-block: var(--scroll-padding);
+    background-color: var(--dark-soft-color);
+
+    /* Perf: evita trabajo fuera de viewport sin romper LCP del hero */
+    content-visibility: auto;
+    contain-intrinsic-size: 520px;
+
+    & .cta-final__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        text-align: center;
+
+        & .cta-final__title {
+            color: var(--white-color);
+            font-family: 'Humane';
+            font-size: 4rem;
+            text-transform: uppercase;
+            border-bottom: solid 5px var(--yellow-color);
+            line-height: 1.05;
+            text-wrap: balance;
+        }
+
+        & .cta-final__text {
+            font-family: 'Outfit';
+            color: var(--white-color);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            text-wrap: pretty;
+        }
+
+        & .cta-final__btn {
+            font-family: 'Humane';
+            font-size: 3rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-color);
+            background-color: var(--yellow-color);
+            padding: .5rem 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+
+            /* accesibilidad y micro-interacciones */
+            min-height: 44px;
+            /* tap target */
+            transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
+        }
+
+        & .cta-final__btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.05);
+        }
+
+        & .cta-final__btn:active {
+            transform: translateY(0);
+            filter: none;
+        }
+
+        & .cta-final__btn:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 3px;
+            box-shadow: 0 0 0 3px rgba(255, 205, 1, .35);
+        }
+    }
+
+    @media (min-width:768px) {
+        & .cta-final__container {
+            & .cta-final__title {
+                font-size: 5rem;
+            }
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        & .cta-final__btn {
+            transition: none !important;
+        }
+    }
+}
+
+/* end of CTA FINAL */
+
+/* FOOTER */
+.footer {
+    background-color: var(--dark-color);
+
+    & .footer__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding-block: 1rem;
+        text-align: center;
+
+        & .footer__text,
+        & .footer__credits {
+            font-family: 'Outfit';
+            font-size: 0.875rem;
+            color: var(--white-color);
+            text-wrap: balance;
+            /* cortes de línea prolijos */
+            margin: 0;
+            /* evitar saltos inesperados */
+        }
+
+        & .footer__credits {
+            & .footer__link {
+                color: var(--yellow-color);
+                text-decoration: none;
+                border-radius: .25rem;
+                outline: none;
+                transition: filter .12s ease, box-shadow .12s ease;
+            }
+
+            & .footer__link:hover {
+                filter: brightness(1.08);
+            }
+
+            & .footer__link:focus-visible {
+                outline: 2px solid currentColor;
+                outline-offset: 2px;
+                box-shadow: 0 0 0 3px rgba(255, 205, 1, .3);
+            }
+        }
+    }
+
+    @media (min-width:768px) {
+        & .footer__container {
+            padding-block: 1.25rem;
+        }
+    }
+}
+
+/* end of FOOTER */

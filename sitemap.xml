@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reemplazá https://tudominio.com por tu dominio real -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home (one-page). No se listan anclas (#seccion). -->
+  <url>
+    <loc>https://tudominio.com/</loc>
+    <lastmod>2025-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Imágenes clave de la home -->
+    <image:image>
+      <image:loc>https://tudominio.com/assets/images/marton-hero.png</image:loc>
+      <image:title>Personal Trainer &amp; Coaching Online - Martín Cullari</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://tudominio.com/assets/images/marton-about.png</image:loc>
+      <image:title>Martín Cullari - Perfil</image:title>
+    </image:image>
+  </url>
+
+  <!-- Si más adelante sumás páginas reales (p. ej. /politica-privacidad), agregalas así:
+  <url>
+    <loc>https://tudominio.com/politica-privacidad</loc>
+    <lastmod>2025-09-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  -->
+
+</urlset>

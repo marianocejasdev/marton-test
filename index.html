@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Martín Cullari | Personal Trainer</title>
+    <meta name="description"
+        content="Entrená con Martín Cullari, Personal Trainer y nutricionista. Planes de rutinas, dietas y asesorías online personalizadas para lograr tu mejor versión.">
+    <link rel="canonical" href="https://tusitio.com.ar/" />
+    <meta name="theme-color" content="#010101">
+
+    <!-- CSS: preload + carga no bloqueante (evita bloqueo de render) -->
+    <link rel="preload" as="style" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="./css/style.css">
+    </noscript>
+
+    <!-- (Opcional) Preload de fuentes WOFF2 locales si las usás -->
+    <link rel="preload" href="./assets/fonts/Humane-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/Outfit-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Preload -->
+    <!-- Mobile -->
+    <link rel="preload" as="image" href="./assets/images/marton-hero-mobile.webp" fetchpriority="high">
+    <!-- Tablet -->
+    <link rel="preload" as="image" href="./assets/images/marton-hero-md.webp" media="(min-width:768px)"
+        fetchpriority="high">
+    <!-- Desktop -->
+    <link rel="preload" as="image" href="./assets/images/marton-hero-lg.webp" media="(min-width:1024px)"
+        fetchpriority="high">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Martín Cullari | Personal Trainer">
+    <meta property="og:description" content="Asesorías, rutinas y dietas personalizadas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tusitio.com.ar/">
+    <meta property="og:image" content="https://tusitio.com.ar/assets/og/cover.webp">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- Twitter Card (simple) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Martín Cullari | Personal Trainer">
+    <meta name="twitter:description" content="Asesorías, rutinas y dietas personalizadas.">
+    <meta name="twitter:image" content="https://tusitio.com.ar/assets/og/cover.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/favicon.ico">
+</head>
+
+<body id="inicio">
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/5491162304028?text=%C2%A1Hola%20Marton!%20Estoy%20interesado%20en%20tus%20asesor%C3%ADas%201%20a%201,%20%C2%BFme%20pas%C3%A1s%20m%C3%A1s%20info%3F"
+        class="whatsapp-button" aria-label="Escribime por WhatsApp – Asesorías 1 a 1" target="_blank"
+        rel="noopener noreferrer">
+        <img src="./assets/icons/whatsapp-brands.svg" alt="" aria-hidden="true">
+    </a>
+    <!-- end WHATSAPP BUTTON -->
+
+    <!-- NAV -->
+    <nav class="nav" aria-label="Menú principal">
+        <div class="nav__container container">
+
+            <div class="nav__logo">
+                <a href="#inicio" class="nav__logo-link" rel="home" aria-label="Ir al inicio">
+                    <img src="./assets/logos/logo-100.webp"
+                        srcset="./assets/logos/logo-100.webp 1x, ./assets/logos/logo-200.webp 2x" width="100"
+                        height="24" alt="Marton" decoding="async">
+                </a>
+            </div>
+
+            <button id="nav__toggle" class="nav__toggle" aria-label="Abrir menú" aria-controls="nav-menu"
+                aria-expanded="false">
+                <img src="assets/icons/menu-white.svg" alt="" aria-hidden="true" width="32" height="32">
+            </button>
+
+            <!-- Menú deslizante -->
+            <div id="nav-menu" class="nav__menu" hidden inert>
+                <button id="nav__close" class="nav__close hidden" aria-label="Cerrar menú">
+                    <img src="./assets/icons/x.svg" alt="" aria-hidden="true" width="32" height="32">
+                </button>
+
+                <ul class="nav__list">
+                    <li class="nav__menu-item"><a href="#inicio" class="nav__menu-link" aria-current="page">INICIO</a>
+                    </li>
+                    <li class="nav__menu-item"><a href="#sobre-mi" class="nav__menu-link">SOBRE MÍ</a></li>
+                    <li class="nav__menu-item"><a href="#rutinas" class="nav__menu-link">RUTINAS</a></li>
+                    <li class="nav__menu-item"><a href="#asesorias" class="nav__menu-link">ASESORÍAS</a></li>
+                    <li class="nav__menu-item"><a href="#dietas" class="nav__menu-link">DIETAS</a></li>
+                    <li class="nav__menu-item"><a href="#testimonios" class="nav__menu-link">TESTIMONIOS</a></li>
+                    <li class="nav__menu-item"><a href="#faq" class="nav__menu-link">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__backdrop"></div>
+        </div>
+    </nav>
+    <!-- end of NAV -->
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <!-- HERO -->
+        <div class="header__hero">
+            <div class="header__container container">
+                <h1 class="header__title">Personal Trainer<br>& Coaching Online</h1>
+                <h2 class="header__subtitle">Tu mejor versión arranca hoy.</h2>
+                <a href="#asesorias" class="header__cta">Empezar ahora →</a>
+            </div>
+        </div>
+        <!-- end of HERO -->
+
+        <!-- ARROW -->
+        <div class="header__arrow">
+            <div class="header__container container">
+                <a href="#sobre-mi" class="header__arrow-link" aria-label="Bajar a la sección Sobre mí">
+                    <img src="./assets/icons/move-down-yellow.svg" alt="" aria-hidden="true" class="header__arrow-icon"
+                        width="32" height="32" decoding="async">
+                </a>
+            </div>
+        </div>
+        <!-- end of ARROW -->
+
+    </header>
+    <!-- end of HEADER -->
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- SOBRE MI -->
+        <section class="about" id="sobre-mi" aria-labelledby="about-title">
+            <div class="about__container container">
+                <div class="about__content">
+                    <h2 class="about__title" id="about-title">¿Quién soy?</h2>
+                    <p class="about__text">Soy <strong>Martín Cullari</strong>, entrenador personal y <strong>coach de
+                            alto rendimiento.</strong></p>
+                    <p class="about__text">Me formé como <strong>Nutricionista</strong> en la <strong>Universidad de
+                            Morón</strong>, y profundicé mis estudios en <strong>nutrición deportiva</strong> con
+                        <strong>Bryan Jackson</strong>, y en <strong>biomecánica aplicada al entrenamiento</strong> a
+                        través de <strong>Pre-Script.</strong>
+                    </p>
+                    <p class="about__text">Actualmente también soy encargado en <strong>ENZO’S TRAINING.</strong></p>
+                    <p class="about__text">Me sigo formando constantemente en <strong>J3U</strong>, una escuela de alto
+                        rendimiento enfocada en atletas y entrenadores.</p>
+                    <p class="about__text">Brindo <strong>planes de entrenamiento</strong> y <strong>nutrición
+                            personalizados</strong>, adaptados a tus objetivos y tu día a día.</p>
+                    <p class="about__text">Creo en el proceso, en la <strong>constancia</strong>, y en acompañarte para
+                        que logres <strong>tu mejor versión, sin excusas.</strong></p>
+                </div>
+
+                <picture class="about__image-wrapper">
+                    <!-- Desktop -->
+                    <source media="(min-width: 1024px)" srcset="./assets/images/marton-about-lg.webp 1x,
+                  ./assets/images/marton-about-lg@2x.webp 2x">
+
+                    <!-- Tablet -->
+                    <source media="(min-width: 768px)" srcset="./assets/images/marton-about-md.webp 1x,
+                  ./assets/images/marton-about-md@2x.webp 2x">
+
+                    <!-- Mobile (fallback) -->
+                    <img src="./assets/images/marton-about-md.webp" srcset="./assets/images/marton-about-md.webp 1x,
+               ./assets/images/marton-about-md@2x.webp 2x" alt="Martín Cullari posando side chest en el gimnasio"
+                        class="about__image" loading="lazy" decoding="async">
+                </picture>
+
+            </div>
+        </section>
+        <!-- end of QUIEN SOY -->
+
+
+
+        <!-- RUTINAS -->
+        <section class="rutinas" id="rutinas" aria-labelledby="rutinas-title">
+            <div class="rutinas__container container">
+
+                <div class="rutinas__header">
+                    <h2 class="rutinas__title" id="rutinas-title">Rutinas disponibles</h2>
+                    <p class="rutinas__description">Elegí el plan que mejor se adapte a vos.</p>
+
+                    <!-- Tablist accesible -->
+                    <div class="rutinas__selector" role="tablist" aria-label="Selector de rutina">
+                        <button class="rutinas__selector-btn" role="tab" aria-selected="false"
+                            aria-controls="panel-rutinas-mujer" id="tab-rutinas-mujer" data-target="mujer"
+                            data-icon-default="assets/icons/venus-yellow.svg" data-icon-active="assets/icons/venus.svg">
+                            <img src="assets/icons/venus-yellow.svg" alt="" aria-hidden="true" width="20" height="20"
+                                loading="lazy" decoding="async" />Mujer
+                        </button>
+
+                        <button class="rutinas__selector-btn rutinas__selector-btn--active" role="tab"
+                            aria-selected="true" aria-controls="panel-rutinas-hombre" id="tab-rutinas-hombre"
+                            data-target="hombre" data-icon-default="assets/icons/mars-yellow.svg"
+                            data-icon-active="assets/icons/mars.svg">
+                            <img src="assets/icons/mars.svg" alt="" aria-hidden="true" width="20" height="20"
+                                loading="lazy" decoding="async" />Hombre
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Panel HOMBRE -->
+                <div class="rutinas__cards rutinas__cards--hombre" id="panel-rutinas-hombre" role="tabpanel"
+                    aria-labelledby="tab-rutinas-hombre" aria-hidden="false">
+
+                    <!-- RUTINA 3 DÍAS -->
+                    <div class="rutinas__card">
+                        <div class="rutinas__card-header">
+                            <img src="assets/icons/calendar-check.svg" alt="" aria-hidden="true"
+                                class="rutinas__card-icon" width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="rutinas__card-title">Rutina de 3 días</h3>
+                        </div>
+
+                        <div class="rutinas__card-tags">
+                            <span class="rutinas__card-tag rutinas__card-tag--bestseller">
+                                <img src="assets/icons/star.svg" alt="" aria-hidden="true" width="16" height="16"
+                                    loading="lazy" decoding="async">Bestseller
+                            </span>
+                            <span class="rutinas__card-tag rutinas__card-tag--ideal">
+                                <img src="assets/icons/biceps-flexed.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async">Ideal para principiantes
+                            </span>
+                        </div>
+
+                        <ul class="rutinas__card-list">
+                            <li class="rutinas__card-item">
+                                <img src="./assets/icons/check-white.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async"> Fullbody
+                            </li>
+                            <li class="rutinas__card-item">
+                                <img src="./assets/icons/check-white.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async"> Plan semanal estructurado
+                            </li>
+                            <li class="rutinas__card-item">
+                                <img src="./assets/icons/check-white.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async"> Acceso inmediato en PDF
+                            </li>
+                        </ul>
+
+                        <div class="rutinas__card-price">
+                            <p class="rutinas__card-price--before">Antes: $25.000</p>
+                            <p class="rutinas__card-price--now">
+                                <img src="assets/icons/flame.svg" alt="" aria-hidden="true" class="rutinas__card-icon"
+                                    width="20" height="20" loading="lazy" decoding="async">
+                                Ahora: $19.999
+                            </p>
+                        </div>
+
+                        <a href="#" class="rutinas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                    <!-- RUTINA 4 DÍAS -->
+                    <div class="rutinas__card">
+                        <div class="rutinas__card-header">
+                            <img src="assets/icons/calendar-check.svg" alt="" aria-hidden="true"
+                                class="rutinas__card-icon" width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="rutinas__card-title">Rutina de 4 días</h3>
+                        </div>
+                        <div class="rutinas__card-tags">
+                            <span class="rutinas__card-tag rutinas__card-tag--equilibrado">
+                                <img src="assets/icons/chart-line.svg" alt="" aria-hidden="true" width="16" height="16"
+                                    loading="lazy" decoding="async"> Progresión equilibrada
+                            </span>
+                        </div>
+                        <ul class="rutinas__card-list">
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Rutina
+                                Torso/Pierna</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Mejor
+                                recuperación</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Acceso
+                                inmediato en PDF</li>
+                        </ul>
+                        <div class="rutinas__card-price">
+                            <p class="rutinas__card-price--before">Antes: $25.000</p>
+                            <p class="rutinas__card-price--now"><img src="assets/icons/flame.svg" alt=""
+                                    aria-hidden="true" class="rutinas__card-icon" width="20" height="20" loading="lazy"
+                                    decoding="async"> Ahora: $19.999</p>
+                        </div>
+                        <a href="#asesorias" class="rutinas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                    <!-- RUTINA 5 DÍAS -->
+                    <div class="rutinas__card">
+                        <div class="rutinas__card-header">
+                            <img src="assets/icons/calendar-check.svg" alt="" aria-hidden="true"
+                                class="rutinas__card-icon" width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="rutinas__card-title">Rutina de 5 días</h3>
+                        </div>
+                        <div class="rutinas__card-tags">
+                            <span class="rutinas__card-tag rutinas__card-tag--avanzado">
+                                <img src="assets/icons/trending-up.svg" alt="" aria-hidden="true" width="16" height="16"
+                                    loading="lazy" decoding="async"> Ganancia muscular optimizada
+                            </span>
+                        </div>
+                        <ul class="rutinas__card-list">
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">
+                                Frecuencia 2x</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Enfoque
+                                en progreso</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Acceso
+                                inmediato en PDF</li>
+                        </ul>
+                        <div class="rutinas__card-price">
+                            <p class="rutinas__card-price--before">Antes: $25.000</p>
+                            <p class="rutinas__card-price--now"><img src="assets/icons/flame.svg" alt=""
+                                    aria-hidden="true" class="rutinas__card-icon" width="20" height="20" loading="lazy"
+                                    decoding="async"> Ahora: $19.999</p>
+                        </div>
+                        <a href="#" class="rutinas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                    <!-- RUTINA 6 DÍAS -->
+                    <div class="rutinas__card">
+                        <div class="rutinas__card-header">
+                            <img src="assets/icons/calendar-check.svg" alt="" aria-hidden="true"
+                                class="rutinas__card-icon" width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="rutinas__card-title">Rutina de 6 días</h3>
+                        </div>
+                        <div class="rutinas__card-tags">
+                            <span class="rutinas__card-tag rutinas__card-tag--intenso">
+                                <img src="assets/icons/dumbbell.svg" alt="" aria-hidden="true" width="16" height="16"
+                                    loading="lazy" decoding="async"> Alto volumen de entrenamiento
+                            </span>
+                        </div>
+                        <ul class="rutinas__card-list">
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Rutina
+                                PPL</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Alto
+                                volumen semanal</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Acceso
+                                inmediato en PDF</li>
+                        </ul>
+                        <div class="rutinas__card-price">
+                            <p class="rutinas__card-price--before">Antes: $25.000</p>
+                            <p class="rutinas__card-price--now"><img src="assets/icons/flame.svg" alt=""
+                                    aria-hidden="true" class="rutinas__card-icon" width="20" height="20" loading="lazy"
+                                    decoding="async"> Ahora: $19.999</p>
+                        </div>
+                        <a href="#" class="rutinas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                </div>
+
+                <!-- Panel MUJER -->
+                <div class="rutinas__cards rutinas__cards--mujer" id="panel-rutinas-mujer" role="tabpanel"
+                    aria-labelledby="tab-rutinas-mujer" aria-hidden="true">
+
+                    <!-- RUTINA 3 DÍAS -->
+                    <div class="rutinas__card">
+                        <div class="rutinas__card-header">
+                            <img src="assets/icons/calendar-check.svg" alt="" aria-hidden="true"
+                                class="rutinas__card-icon" width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="rutinas__card-title">Rutina de 3 días</h3>
+                        </div>
+
+                        <div class="rutinas__card-tags">
+                            <span class="rutinas__card-tag rutinas__card-tag--bestseller">
+                                <img src="assets/icons/star.svg" alt="" aria-hidden="true" width="16" height="16"
+                                    loading="lazy" decoding="async">Bestseller
+                            </span>
+                            <span class="rutinas__card-tag rutinas__card-tag--ideal">
+                                <img src="assets/icons/biceps-flexed.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async">Ideal para principiantes
+                            </span>
+                        </div>
+
+                        <ul class="rutinas__card-list">
+                            <li class="rutinas__card-item">
+                                <img src="./assets/icons/check-white.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async"> Fullbody
+                            </li>
+                            <li class="rutinas__card-item">
+                                <img src="./assets/icons/check-white.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async"> Plan semanal estructurado
+                            </li>
+                            <li class="rutinas__card-item">
+                                <img src="./assets/icons/check-white.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async"> Acceso inmediato en PDF
+                            </li>
+                        </ul>
+
+                        <div class="rutinas__card-price">
+                            <p class="rutinas__card-price--before">Antes: $25.000</p>
+                            <p class="rutinas__card-price--now">
+                                <img src="assets/icons/flame.svg" alt="" aria-hidden="true" class="rutinas__card-icon"
+                                    width="20" height="20" loading="lazy" decoding="async">
+                                Ahora: $19.999
+                            </p>
+                        </div>
+
+                        <a href="#" class="rutinas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                    <!-- RUTINA 4 DÍAS -->
+                    <div class="rutinas__card">
+                        <div class="rutinas__card-header">
+                            <img src="assets/icons/calendar-check.svg" alt="" aria-hidden="true"
+                                class="rutinas__card-icon" width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="rutinas__card-title">Rutina de 4 días</h3>
+                        </div>
+                        <div class="rutinas__card-tags">
+                            <span class="rutinas__card-tag rutinas__card-tag--equilibrado">
+                                <img src="assets/icons/chart-line.svg" alt="" aria-hidden="true" width="16" height="16"
+                                    loading="lazy" decoding="async"> Progresión equilibrada
+                            </span>
+                        </div>
+                        <ul class="rutinas__card-list">
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Rutina
+                                Torso/Pierna</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Mejor
+                                recuperación</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Acceso
+                                inmediato en PDF</li>
+                        </ul>
+                        <div class="rutinas__card-price">
+                            <p class="rutinas__card-price--before">Antes: $25.000</p>
+                            <p class="rutinas__card-price--now"><img src="assets/icons/flame.svg" alt=""
+                                    aria-hidden="true" class="rutinas__card-icon" width="20" height="20" loading="lazy"
+                                    decoding="async"> Ahora: $19.999</p>
+                        </div>
+                        <a href="#asesorias" class="rutinas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                    <!-- RUTINA 5 DÍAS -->
+                    <div class="rutinas__card">
+                        <div class="rutinas__card-header">
+                            <img src="assets/icons/calendar-check.svg" alt="" aria-hidden="true"
+                                class="rutinas__card-icon" width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="rutinas__card-title">Rutina de 5 días</h3>
+                        </div>
+                        <div class="rutinas__card-tags">
+                            <span class="rutinas__card-tag rutinas__card-tag--avanzado">
+                                <img src="assets/icons/trending-up.svg" alt="" aria-hidden="true" width="16" height="16"
+                                    loading="lazy" decoding="async"> Ganancia muscular optimizada
+                            </span>
+                        </div>
+                        <ul class="rutinas__card-list">
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">
+                                Frecuencia 2x</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Enfoque
+                                en progreso</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Acceso
+                                inmediato en PDF</li>
+                        </ul>
+                        <div class="rutinas__card-price">
+                            <p class="rutinas__card-price--before">Antes: $25.000</p>
+                            <p class="rutinas__card-price--now"><img src="assets/icons/flame.svg" alt=""
+                                    aria-hidden="true" class="rutinas__card-icon" width="20" height="20" loading="lazy"
+                                    decoding="async"> Ahora: $19.999</p>
+                        </div>
+                        <a href="#" class="rutinas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                    <!-- RUTINA 6 DÍAS -->
+                    <div class="rutinas__card">
+                        <div class="rutinas__card-header">
+                            <img src="assets/icons/calendar-check.svg" alt="" aria-hidden="true"
+                                class="rutinas__card-icon" width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="rutinas__card-title">Rutina de 6 días</h3>
+                        </div>
+                        <div class="rutinas__card-tags">
+                            <span class="rutinas__card-tag rutinas__card-tag--intenso">
+                                <img src="assets/icons/dumbbell.svg" alt="" aria-hidden="true" width="16" height="16"
+                                    loading="lazy" decoding="async"> Alto volumen de entrenamiento
+                            </span>
+                        </div>
+                        <ul class="rutinas__card-list">
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Rutina
+                                PPL</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Alto
+                                volumen semanal</li>
+                            <li class="rutinas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async"> Acceso
+                                inmediato en PDF</li>
+                        </ul>
+                        <div class="rutinas__card-price">
+                            <p class="rutinas__card-price--before">Antes: $25.000</p>
+                            <p class="rutinas__card-price--now"><img src="assets/icons/flame.svg" alt=""
+                                    aria-hidden="true" class="rutinas__card-icon" width="20" height="20" loading="lazy"
+                                    decoding="async"> Ahora: $19.999</p>
+                        </div>
+                        <a href="#" class="rutinas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                </div>
+
+                <div class="rutinas__info">
+                    <p class="rutinas__info-text">
+                        <img src="./assets/icons/download.svg" alt="" aria-hidden="true" width="16" height="16"
+                            loading="lazy" decoding="async">
+                        Recibís tu rutina en PDF al instante al hacer la compra.
+                    </p>
+                    <p class="rutinas__info-text">
+                        <img src="./assets/icons/user-x.svg" alt="" aria-hidden="true" width="16" height="16"
+                            loading="lazy" decoding="async">No incluye seguimiento ni asesoría personalizada.
+                    </p>
+                    <p class="rutinas__info-text">
+                        <img src="./assets/icons/message-square.svg" alt="" aria-hidden="true" width="16" height="16"
+                            loading="lazy" decoding="async">
+                        ¿Querés algo adaptado a vos? <a href="#asesorias">Mirá la asesoría 1 a 1.</a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        <!-- end of RUTINAS -->
+
+
+        <!-- ASESORÍAS PERSONALIZADAS 1 A 1 -->
+        <section class="asesorias" id="asesorias" aria-labelledby="asesorias-title">
+            <div class="asesorias__container container">
+
+                <div class="asesorias__content">
+
+                    <div class="asesorias__header">
+                        <h2 class="asesorias__title" id="asesorias-title">Asesorías <br> personalizadas 1 a 1</h2>
+                        <p class="asesorias__subtitle">Entrená con un plan hecho 100% para vos.</p>
+                    </div>
+
+                    <p class="asesorias__description">
+                        Planes 100% personalizados, con devoluciones semanales, seguimiento directo y progresiones
+                        ajustadas a tu evolución.
+                    </p>
+
+                    <ul class="asesorias__list">
+                        <li class="asesorias__item">
+                            <img src="./assets/icons/check.svg" alt="" aria-hidden="true" loading="lazy"
+                                decoding="async">
+                            Rutina de entrenamiento personalizada
+                        </li>
+                        <li class="asesorias__item">
+                            <img src="./assets/icons/check.svg" alt="" aria-hidden="true" loading="lazy"
+                                decoding="async">
+                            Plan nutricional adaptado a vos
+                        </li>
+                        <li class="asesorias__item">
+                            <img src="./assets/icons/check.svg" alt="" aria-hidden="true" loading="lazy"
+                                decoding="async">
+                            Optimización del perfil hormonal
+                        </li>
+                        <li class="asesorias__item">
+                            <img src="./assets/icons/check.svg" alt="" aria-hidden="true" loading="lazy"
+                                decoding="async">
+                            Seguimiento semanal vía WhatsApp
+                        </li>
+                        <li class="asesorias__item">
+                            <img src="./assets/icons/check.svg" alt="" aria-hidden="true" loading="lazy"
+                                decoding="async">
+                            Adaptaciones según progresos y feedback
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/5491162304028?text=Hola%20Marton,%20estoy%20interesado%20en%20suplementaci%C3%B3n%20qu%C3%ADmica.%20%C2%BFMe%20pas%C3%A1s%20m%C3%A1s%20info%3F"
+                        target="_blank" rel="noopener noreferrer" class="asesorias__note">
+                        <img src="assets/icons/pill-bottle.svg" alt="" aria-hidden="true" class="asesorias__note-icon"
+                            loading="lazy" decoding="async">
+                        Suplementación química (consultá por WhatsApp)
+                    </a>
+
+                    <div class="asesorias__footer">
+                        <p class="asesorias__price">$40.000 ARS / mes</p>
+                        <a href="https://wa.me/5491162304028?text=%C2%A1Hola%20Marton!%20Estoy%20interesado%20en%20tus%20asesor%C3%ADas%201%20a%201,%20%C2%BFme%20pas%C3%A1s%20m%C3%A1s%20info%3F"
+                            aria-label="Escribime por WhatsApp – Asesorías 1 a 1" target="_blank"
+                            rel="noopener noreferrer" class="asesorias__cta ">Empezar ahora →</a>
+                    </div>
+                </div>
+
+                <picture class="asesorias__image-wrapper">
+                    <source media="(min-width:1024px)" srcset="./assets/images/marton-asesorias-lg.webp 1x,
+                  ./assets/images/marton-asesorias-lg@2x.webp 2x">
+                    <source media="(min-width:768px)" srcset="./assets/images/marton-asesorias-md.webp 1x,
+                  ./assets/images/marton-asesorias-md@2x.webp 2x">
+                    <img src="./assets/images/marton-asesorias-md.webp" srcset="./assets/images/marton-asesorias-md.webp 1x,
+               ./assets/images/marton-asesorias-md@2x.webp 2x" alt="Martín Cullari – Asesorías 1 a 1 personalizadas"
+                        class="asesorias__image" loading="lazy" decoding="async">
+                </picture>
+
+            </div>
+        </section>
+        <!-- end of ASESORÍAS PERSONALIZADAS 1 A 1 -->
+
+        <!-- DIETAS -->
+        <section class="dietas" id="dietas" aria-labelledby="dietas-title">
+            <div class="dietas__container container">
+
+                <div class="dietas__header">
+                    <h2 class="dietas__title" id="dietas-title">Dietas disponibles</h2>
+                    <p class="dietas__description">Elegí el plan que mejor se adapte a vos.</p>
+                </div>
+
+                <div class="dietas__cards" data-group="tipo">
+                    <!-- DIETA 2000 -->
+                    <div class="dietas__card">
+                        <div class="dietas__card-header">
+                            <img src="assets/icons/biceps-flexed-yellow.svg" alt="" aria-hidden="true"
+                                class="dietas__card-icon" width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="dietas__card-title">Dieta 2000 kcal</h3>
+                        </div>
+                        <div class="dietas__card-tags">
+                            <span class="dietas__card-tag dietas__card-tag--bestseller">
+                                <img src="assets/icons/star.svg" alt="" aria-hidden="true" class="dietas__card-tag-icon"
+                                    width="16" height="16" loading="lazy" decoding="async">
+                                Bestseller
+                            </span>
+                            <span class="dietas__card-tag dietas__card-tag--subir-peso">
+                                <img src="assets/icons/biceps-flexed.svg" alt="" aria-hidden="true"
+                                    class="dietas__card-tag-icon" width="16" height="16" loading="lazy"
+                                    decoding="async">
+                                Ideal para definición o mantenimiento
+                            </span>
+                        </div>
+
+                        <ul class="dietas__card-list">
+                            <li class="dietas__card-item">
+                                <img src="./assets/icons/check-white.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async">
+                                Optimiza tu composición corporal sin pasar hambre.
+                            </li>
+                            <li class="dietas__card-item">
+                                <img src="./assets/icons/check-white.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async">
+                                Combinación balanceada de macros para resultados sostenibles.
+                            </li>
+                            <li class="dietas__card-item">
+                                <img src="./assets/icons/check-white.svg" alt="" aria-hidden="true" width="16"
+                                    height="16" loading="lazy" decoding="async">
+                                Ideal si querés mantener masa muscular mientras reducís grasa.
+                            </li>
+                        </ul>
+
+                        <div class="dietas__card-price">
+                            <p class="dietas__card-price--before">Antes: $25.000</p>
+                            <p class="dietas__card-price--now">
+                                <img src="assets/icons/flame.svg" alt="" aria-hidden="true" class="dietas__card-icon"
+                                    width="20" height="20" loading="lazy" decoding="async">
+                                Ahora: $19.999
+                            </p>
+                        </div>
+                        <a href="#" class="dietas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                    <!-- DIETA 2500 -->
+                    <div class="dietas__card">
+                        <div class="dietas__card-header">
+                            <img src="assets/icons/zap.svg" alt="" aria-hidden="true" class="dietas__card-icon"
+                                width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="dietas__card-title">Dieta 2500 kcal</h3>
+                        </div>
+                        <div class="dietas__card-tags">
+                            <span class="dietas__card-tag dietas__card-tag--reducir-grasa">
+                                <img src="assets/icons/flame-white.svg" alt="" aria-hidden="true"
+                                    class="dietas__card-tag-icon" width="16" height="16" loading="lazy"
+                                    decoding="async">
+                                Recomposición corporal y rendimiento
+                            </span>
+                        </div>
+                        <ul class="dietas__card-list">
+                            <li class="dietas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">Perfecta
+                                para quienes entrenan con regularidad y buscan progresar.</li>
+                            <li class="dietas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">Aporta
+                                energía, recuperación y desarrollo muscular gradual.</li>
+                            <li class="dietas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">Adaptada a
+                                rutinas exigentes sin excederte en calorías.</li>
+                        </ul>
+                        <div class="dietas__card-price">
+                            <p class="dietas__card-price--before">Antes: $25.000</p>
+                            <p class="dietas__card-price--now"><img src="assets/icons/flame.svg" alt=""
+                                    aria-hidden="true" class="dietas__card-icon" width="20" height="20" loading="lazy"
+                                    decoding="async">Ahora: $19.999</p>
+                        </div>
+                        <a href="#" class="dietas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                    <!-- DIETA 3000 -->
+                    <div class="dietas__card">
+                        <div class="dietas__card-header">
+                            <img src="assets/icons/leaf.svg" alt="" aria-hidden="true" class="dietas__card-icon"
+                                width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="dietas__card-title">Dieta 3000 kcal</h3>
+                        </div>
+                        <div class="dietas__card-tags">
+                            <span class="dietas__card-tag dietas__card-tag--sin-carne">
+                                <img src="assets/icons/leaf-white.svg" alt="" aria-hidden="true"
+                                    class="dietas__card-tag-icon" width="16" height="16" loading="lazy"
+                                    decoding="async">
+                                Volumen controlado, sin grasa de más
+                            </span>
+                        </div>
+                        <ul class="dietas__card-list">
+                            <li class="dietas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">Diseñada
+                                para aumentar masa muscular con calidad.</li>
+                            <li class="dietas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">Ideal si
+                                venís estancado o necesitás más energía para rendir.</li>
+                            <li class="dietas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">Calculada
+                                para evitar excesos y mantener buena digestión.</li>
+                        </ul>
+                        <div class="dietas__card-price">
+                            <p class="dietas__card-price--before">Antes: $25.000</p>
+                            <p class="dietas__card-price--now"><img src="assets/icons/flame.svg" alt=""
+                                    aria-hidden="true" class="dietas__card-icon" width="20" height="20" loading="lazy"
+                                    decoding="async">Ahora: $19.999</p>
+                        </div>
+                        <a href="#" class="dietas__card-btn">Empezá hoy →</a>
+                    </div>
+
+                    <!-- DIETA 3500 -->
+                    <div class="dietas__card">
+                        <div class="dietas__card-header">
+                            <img src="assets/icons/gauge.svg" alt="" aria-hidden="true" class="dietas__card-icon"
+                                width="48" height="48" loading="lazy" decoding="async">
+                            <h3 class="dietas__card-title">Dieta 3500 kcal</h3>
+                        </div>
+                        <div class="dietas__card-tags">
+                            <span class="dietas__card-tag dietas__card-tag--mantener-peso">
+                                <img src="assets/icons/scale.svg" alt="" aria-hidden="true"
+                                    class="dietas__card-tag-icon" width="16" height="16" loading="lazy"
+                                    decoding="async">
+                                Volumen agresivo
+                            </span>
+                        </div>
+                        <ul class="dietas__card-list">
+                            <li class="dietas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">Perfecta
+                                para metabolismo acelerado o doble turno de entrenamiento.</li>
+                            <li class="dietas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">Enfoque en
+                                hipertrofia máxima y recuperación completa.</li>
+                            <li class="dietas__card-item"><img src="./assets/icons/check-white.svg" alt=""
+                                    aria-hidden="true" width="16" height="16" loading="lazy" decoding="async">Alta en
+                                calorías, con nutrientes clave.</li>
+                        </ul>
+                        <div class="dietas__card-price">
+                            <p class="dietas__card-price--before">Antes: $25.000</p>
+                            <p class="dietas__card-price--now"><img src="assets/icons/flame.svg" alt=""
+                                    aria-hidden="true" class="dietas__card-icon" width="20" height="20" loading="lazy"
+                                    decoding="async">Ahora: $19.999</p>
+                        </div>
+                        <a href="#" class="dietas__card-btn">Empezá hoy →</a>
+                    </div>
+                </div>
+
+                <!-- INFO FINAL -->
+                <div class="dietas__info">
+                    <p class="dietas__info-text">
+                        <img src="./assets/icons/download.svg" alt="" aria-hidden="true" width="16" height="16"
+                            loading="lazy" decoding="async">
+                        Recibís tu rutina en PDF al instante al hacer la compra.
+                    </p>
+                    <p class="dietas__info-text">
+                        <img src="./assets/icons/user-x.svg" alt="" aria-hidden="true" width="16" height="16"
+                            loading="lazy" decoding="async">
+                        No incluye seguimiento ni asesoría personalizada.
+                    </p>
+                    <p class="dietas__info-text">
+                        <img src="./assets/icons/message-square.svg" alt="" aria-hidden="true" width="16" height="16"
+                            loading="lazy" decoding="async">
+                        ¿Querés algo adaptado a vos? <a href="#asesorias">Mirá la asesoría 1 a 1.</a>
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        <!-- end of DIETAS -->
+
+
+        <!-- TESTIMONIOS -->
+        <section class="testimonios" id="testimonios" aria-labelledby="testimonios-title">
+            <!-- CONTENEDOR DE TESTIMONIOS -->
+            <div class="testimonios__container container">
+                <h2 class="testimonios__title" id="testimonios-title">Testimonios reales</h2>
+
+                <div class="testimonios__cards" role="list">
+                    <!-- CARD 1 -->
+                    <div class="testimonios__card" role="listitem">
+                        <img src="assets/icons/quote.svg" alt="" aria-hidden="true" width="24" height="24"
+                            loading="lazy" decoding="async">
+                        <p class="testimonios__quote">“Volví a entrenar después de años y por primera vez sentí que
+                            tenía un plan que se adaptaba a mí. Nada de rutinas copiadas de Google.”</p>
+                        <div class="testimonios__user">
+                            <img src="assets/avatars/avatar.webp" alt="" aria-hidden="true" class="testimonios__avatar"
+                                width="48" height="48" loading="lazy" decoding="async">
+                            <div>
+                                <p class="testimonios__name"><strong>Sofía Benítez, 32 años</strong></p>
+                                <p class="testimonios__info">Lic. en Nutrición</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="testimonios__card" role="listitem">
+                        <img src="assets/icons/quote.svg" alt="" aria-hidden="true" width="24" height="24"
+                            loading="lazy" decoding="async">
+                        <p class="testimonios__quote">“Venía entrenando por mi cuenta sin ver resultados. Marton me
+                            ayudó a organizarme, entrenar mejor y progresar sin romperme.”</p>
+                        <div class="testimonios__user">
+                            <img src="assets/avatars/avatar.webp" alt="" aria-hidden="true" class="testimonios__avatar"
+                                width="48" height="48" loading="lazy" decoding="async">
+                            <div>
+                                <p class="testimonios__name"><strong>Tomás Ferreyra, 29 años</strong></p>
+                                <p class="testimonios__info">Desarrollador Web</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="testimonios__card" role="listitem">
+                        <img src="assets/icons/quote.svg" alt="" aria-hidden="true" width="24" height="24"
+                            loading="lazy" decoding="async">
+                        <p class="testimonios__quote">“Tengo poco tiempo por el laburo. El plan se ajusta a mi rutina y
+                            eso me permite sostenerlo en el tiempo sin frustrarme.”</p>
+                        <div class="testimonios__user">
+                            <img src="assets/avatars/avatar.webp" alt="" aria-hidden="true" class="testimonios__avatar"
+                                width="48" height="48" loading="lazy" decoding="async">
+                            <div>
+                                <p class="testimonios__name"><strong>Martín Cardozo, 41 años</strong></p>
+                                <p class="testimonios__info">Profesor de Educación Física</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div class="testimonios__card" role="listitem">
+                        <img src="assets/icons/quote.svg" alt="" aria-hidden="true" width="24" height="24"
+                            loading="lazy" decoding="async">
+                        <p class="testimonios__quote">“Tengo poco tiempo por el laburo. El plan se ajusta a mi rutina y
+                            eso me permite sostenerlo en el tiempo sin frustrarme.”</p>
+                        <div class="testimonios__user">
+                            <img src="assets/avatars/avatar.webp" alt="" aria-hidden="true" class="testimonios__avatar"
+                                width="48" height="48" loading="lazy" decoding="async">
+                            <div>
+                                <p class="testimonios__name"><strong>Martín Cardozo, 41 años</strong></p>
+                                <p class="testimonios__info">Profesor de Educación Física</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 5 -->
+                    <div class="testimonios__card" role="listitem">
+                        <img src="assets/icons/quote.svg" alt="" aria-hidden="true" width="24" height="24"
+                            loading="lazy" decoding="async">
+                        <p class="testimonios__quote">“Tengo poco tiempo por el laburo. El plan se ajusta a mi rutina y
+                            eso me permite sostenerlo en el tiempo sin frustrarme.”</p>
+                        <div class="testimonios__user">
+                            <img src="assets/avatars/avatar.webp" alt="" aria-hidden="true" class="testimonios__avatar"
+                                width="48" height="48" loading="lazy" decoding="async">
+                            <div>
+                                <p class="testimonios__name"><strong>Martín Cardozo, 41 años</strong></p>
+                                <p class="testimonios__info">Profesor de Educación Física</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 6 -->
+                    <div class="testimonios__card" role="listitem">
+                        <img src="assets/icons/quote.svg" alt="" aria-hidden="true" width="24" height="24"
+                            loading="lazy" decoding="async">
+                        <p class="testimonios__quote">“Tengo poco tiempo por el laburo. El plan se ajusta a mi rutina y
+                            eso me permite sostenerlo en el tiempo sin frustrarme.”</p>
+                        <div class="testimonios__user">
+                            <img src="assets/avatars/avatar.webp" alt="" aria-hidden="true" class="testimonios__avatar"
+                                width="48" height="48" loading="lazy" decoding="async">
+                            <div>
+                                <p class="testimonios__name"><strong>Martín Cardozo, 41 años</strong></p>
+                                <p class="testimonios__info">Profesor de Educación Física</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GALERÍA DE TRANSFORMACIONES -->
+            <div class="testimonios__reel" aria-label="Galería de transformaciones">
+                <img src="assets/reel/reel-1.webp" alt="Antes y después" class="testimonios__reel-img" width="800"
+                    height="1000" loading="lazy" decoding="async">
+                <img src="assets/reel/reel-1.webp" alt="Antes y después" class="testimonios__reel-img" width="800"
+                    height="1000" loading="lazy" decoding="async">
+                <img src="assets/reel/reel-1.webp" alt="Antes y después" class="testimonios__reel-img" width="800"
+                    height="1000" loading="lazy" decoding="async">
+                <img src="assets/reel/reel-1.webp" alt="Antes y después" class="testimonios__reel-img" width="800"
+                    height="1000" loading="lazy" decoding="async">
+                <img src="assets/reel/reel-1.webp" alt="Antes y después" class="testimonios__reel-img" width="800"
+                    height="1000" loading="lazy" decoding="async">
+            </div>
+        </section>
+        <!-- end of TESTIMONIOS -->
+
+        <!-- BANNER ENTRENO -->
+        <section class="entreno-banner" aria-labelledby="entreno-title">
+            <div class="entreno-banner__container container">
+
+                <div class="entreno-banner__info">
+                    <h2 id="entreno-title" class="visually-hidden">Descuento Entreno</h2>
+
+                    <img src="assets/logos/entreno.webp" alt="Entreno" class="entreno-banner__logo" width="200"
+                        height="40" loading="lazy" decoding="async">
+
+                    <p class="entreno-banner__text">
+                        <strong>10% de descuento</strong> en <br> suplementos con el código
+                    </p>
+                </div>
+
+                <div class="entreno-banner__action">
+                    <span class="entreno-banner__codigo" aria-label="Código de descuento: MARTON">MARTON</span>
+
+                    <a href="https://entreno.com.ar" target="_blank" rel="noopener noreferrer"
+                        class="entreno-banner__btn">
+                        Comprar →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+        <!-- end of BANNER ENTRENO -->
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <section class="faq" id="faq" aria-labelledby="faq-title">
+            <div class="faq__container container">
+                <h2 class="faq__title" id="faq-title">Preguntas frecuentes</h2>
+
+                <div class="faq__questions">
+                    <details class="faq__item">
+                        <summary class="faq__question" aria-controls="faq-a1">1. ¿Necesito experiencia previa para
+                            arrancar?</summary>
+                        <p class="faq__answer" id="faq-a1">
+                            No, todos los planes están pensados para adaptarse a tu nivel actual. Si sos principiante,
+                            comenzamos con una base sólida y progresiva.
+                        </p>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question" aria-controls="faq-a2">2. ¿Qué incluye cada plan?</summary>
+                        <p class="faq__answer" id="faq-a2">
+                            El plan incluye la rutina de entrenamiento estructurada, explicaciones claras, objetivos
+                            semanales y acceso en formato PDF. Algunas opciones también incluyen dieta complementaria.
+                        </p>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question" aria-controls="faq-a3">3. ¿Cómo es el seguimiento?</summary>
+                        <p class="faq__answer" id="faq-a3">
+                            Te doy devoluciones y adaptaciones en cada check. Ajustamos lo necesario para que sigas
+                            progresando. El seguimiento se hace vía WhatsApp de forma semanal (solo en asesorías
+                            personalizadas).
+                        </p>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question" aria-controls="faq-a4">4. ¿Necesito gimnasio sí o sí?</summary>
+                        <p class="faq__answer" id="faq-a4">
+                            No es obligatorio, pero se recomienda para ciertos planes. También hay rutinas adaptadas
+                            para entrenar en casa o con recursos mínimos.
+                        </p>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question" aria-controls="faq-a5">5. ¿Qué pasa si no puedo seguir el plan al
+                            100%?</summary>
+                        <p class="faq__answer" id="faq-a5">
+                            Lo importante es la constancia. Podés adaptar los días o cargas según tu disponibilidad. El
+                            progreso no se pierde por no cumplir el plan al pie de la letra.
+                        </p>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question" aria-controls="faq-a6">6. ¿Incluye dieta también?</summary>
+                        <p class="faq__answer" id="faq-a6">
+                            Sí, hay dietas específicas para volumen, definición, mantenimiento y opción vegetariana.
+                            También podés adquirir asesoría personalizada con seguimiento nutricional.
+                        </p>
+                    </details>
+
+                    <details class="faq__item">
+                        <summary class="faq__question" aria-controls="faq-a7">7. ¿Cómo me inscribo?</summary>
+                        <p class="faq__answer" id="faq-a7">
+                            Podés elegir el plan que te interese y hacer clic en “Empezá hoy”. Si tenés dudas, también
+                            podés escribirme por WhatsApp para una asesoría personalizada.
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- SEO: datos estructurados FAQPage (rich results) -->
+            <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"¿Necesito experiencia previa para arrancar?","acceptedAnswer":{"@type":"Answer","text":"No, todos los planes se adaptan a tu nivel. Si sos principiante, empezamos con una base sólida y progresiva."}},
+      {"@type":"Question","name":"¿Qué incluye cada plan?","acceptedAnswer":{"@type":"Answer","text":"Rutina estructurada, explicaciones claras, objetivos semanales y acceso en PDF. Algunas opciones incluyen dieta complementaria."}},
+      {"@type":"Question","name":"¿Cómo es el seguimiento?","acceptedAnswer":{"@type":"Answer","text":"Con devoluciones semanales y ajustes según tu progreso. El seguimiento se realiza por WhatsApp en asesorías personalizadas."}},
+      {"@type":"Question","name":"¿Necesito gimnasio sí o sí?","acceptedAnswer":{"@type":"Answer","text":"No es obligatorio. Hay rutinas para casa o con recursos mínimos, aunque el gimnasio se recomienda en algunos planes."}},
+      {"@type":"Question","name":"¿Qué pasa si no puedo seguir el plan al 100%?","acceptedAnswer":{"@type":"Answer","text":"La constancia es lo clave. Podés adaptar días o cargas; no perdés progreso por no cumplirlo perfecto."}},
+      {"@type":"Question","name":"¿Incluye dieta también?","acceptedAnswer":{"@type":"Answer","text":"Sí: dietas para volumen, definición, mantenimiento y opción vegetariana. También hay asesoría con seguimiento nutricional."}},
+      {"@type":"Question","name":"¿Cómo me inscribo?","acceptedAnswer":{"@type":"Answer","text":"Elegí el plan y hacé clic en “Empezá hoy”. Si tenés dudas, escribime por WhatsApp para una asesoría personalizada."}}
+    ]
+  }
+  </script>
+        </section>
+        <!-- end of FAQ -->
+
+        <!-- CTA FINAL -->
+        <section class="cta-final" aria-labelledby="cta-final-title">
+            <div class="cta-final__container container">
+                <h2 class="cta-final__title" id="cta-final-title">¿Listo para transformarte?</h2>
+                <p class="cta-final__text" id="cta-final-desc">No esperes más. El cambio empieza hoy.</p>
+                <a href="#asesorias" class="cta-final__btn" aria-describedby="cta-final-desc">Empezar ahora →</a>
+            </div>
+        </section>
+        <!-- end of CTA FINAL -->
+
+    </main>
+    <!-- end of MAIN -->
+
+    <!-- FOOTER -->
+    <footer class="footer" aria-labelledby="footer-title">
+        <div class="footer__container container">
+            <h2 id="footer-title" class="visually-hidden">Información del sitio</h2>
+
+            <p class="footer__text">
+                &copy; <time datetime="2025">2025</time> Martín Cullari – Todos los derechos reservados.
+            </p>
+
+            <p class="footer__credits">
+                Sitio desarrollado por
+                <a href="https://github.com/marianocejasdev" target="_blank" rel="noopener noreferrer"
+                    class="footer__link" aria-label="Perfil de GitHub de Mariano Cejas (se abre en una pestaña nueva)">
+                    Mariano Cejas
+                    <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+                </a>
+            </p>
+        </div>
+    </footer>
+    <!-- end of FOOTER -->
+
+    <!-- JS -->
+    <script src="./js/app.js" defer></script>
+
+</body>
+
+</html>
