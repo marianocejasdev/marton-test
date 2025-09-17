@@ -375,17 +375,16 @@ body.no-scroll {
 
 .header {
     /* ✅ añadido: color de fondo por si la imagen tarda (mejor FCP) */
-    background-color: var(--dark-color);
-
     height: calc(100svh - var(--scroll-padding));
-
-    background:
-        linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0.5)),
-        image-set(url('../assets/images/marton-hero-mobile.webp') type('image/webp'),
-            url('../assets/images/marton-hero-mobile.png') type('image/png'));
+    background-color: var(--dark-color);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    background-image:
+        linear-gradient(rgba(1, 1, 1, .5), rgba(1, 1, 1, .5)),
+        image-set(url('../assets/images/marton-hero-mobile.webp') type('image/webp'),
+            url('../assets/images/marton-hero-mobile.png') type('image/png'));
 
     display: grid;
     grid-template-rows: 1fr auto;
@@ -465,8 +464,8 @@ body.no-scroll {
 
     @media (min-width: 768px) {
 
-        background:
-            linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0.5)),
+        background-image:
+            linear-gradient(rgba(1, 1, 1, .5), rgba(1, 1, 1, .5)),
             image-set(url('../assets/images/marton-hero-md.webp') type('image/webp'),
                 url('../assets/images/marton-hero-md.png') type('image/png'));
 
@@ -495,8 +494,8 @@ body.no-scroll {
     }
 
     @media (min-width: 1200px) {
-        background:
-            linear-gradient(rgba(1, 1, 1, 0.5), rgba(1, 1, 1, 0.5)),
+        background-image:
+            linear-gradient(rgba(1, 1, 1, .5), rgba(1, 1, 1, .5)),
             image-set(url('../assets/images/marton-hero-lg.webp') type('image/webp'),
                 url('../assets/images/marton-hero-lg.png') type('image/png'));
     }
